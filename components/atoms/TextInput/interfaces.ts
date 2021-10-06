@@ -2,7 +2,8 @@ import { InputHTMLAttributes } from 'react';
 
 export type TextInputVariant = 'outlined'
 
-export interface TextInputProps extends InputHTMLAttributes<{}> {
+export interface ITextInputProps extends InputHTMLAttributes<{}> {
+  id: string
   variant?: TextInputVariant
   htmlFor: string
   label?: string

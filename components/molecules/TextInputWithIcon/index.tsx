@@ -1,8 +1,8 @@
 import { classNames } from '../../../utils/style';
 import TextInput from '../../atoms/TextInput';
-import { TextInputWithIconProps } from './interface';
+import { ITextInputWithIconProps } from './interfaces';
 
-export default function TextInputWithIcon({ icon, iconClassName = '', ...props }: TextInputWithIconProps) {
+export default function TextInputWithIcon({ icon, iconClassName = '', ...props }: ITextInputWithIconProps) {
   return (
     <div className="relative z-0">
       <span className={classNames('absolute inset-y-0 left-0 flex items-center pl-3', iconClassName)}>

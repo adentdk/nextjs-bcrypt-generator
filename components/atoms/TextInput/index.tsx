@@ -1,9 +1,9 @@
 import { classNames } from '../../../utils/style';
-import { TextInputProps } from './interface';
+import { ITextInputProps } from './interfaces';
 
 export default function TextInput({
   id, type, label = '', className = '', fullWidth = false, onChangeText, onChange, ...props
-}: TextInputProps) {
+}: ITextInputProps) {
   return (
     <div>
       <label className="text-gray-700 dark:text-gray-200" htmlFor={id}>

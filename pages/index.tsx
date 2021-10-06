@@ -1,11 +1,12 @@
 import { NextPage } from 'next';
+import Button from '../components/atoms/Button';
 import Paper from '../components/atoms/Paper';
 import DashboardTemplate from '../components/templates/Dashboard';
 
 const Index: NextPage = () => (
   <DashboardTemplate>
     <Paper>
-      <h1>Title</h1>
+      <Button variant="contained" color="primary">halo</Button>
     </Paper>
   </DashboardTemplate>
 );
