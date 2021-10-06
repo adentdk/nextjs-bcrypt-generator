@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
+
+.border-inset {
+  border-style: 'dotted'
+}
+
 @tailwind utilities;

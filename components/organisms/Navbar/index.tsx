@@ -2,7 +2,7 @@ import TextInputWithIcon from '../../molecules/TextInputWithIcon';
 
 export default function Navbar() {
   return (
-    <nav className="bg-white md:shadow-md py-2 dark:bg-gray-800">
+    <nav className="bg-white border-b-1 dark:border-gray-600 border-inset md:shadow-md pb-2 md:pt-2 dark:bg-gray-800">
       <div className="container px-6 mx-auto md:flex md:justify-between md:items-center">
         <div className="flex flex-1 justify-between">
           <div className="w-full md:mr-4">
