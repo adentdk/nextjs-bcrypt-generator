@@ -1,8 +1,8 @@
 import { StatusCodes } from "http-status-codes"
-import {resolveErrorMessage} from "@lib"
 
 type fetcherArgs = [string, any]
 
+// eslint-disable-next-line import/prefer-default-export
 export function fetcher<Rs> (...args: fetcherArgs) {
   return new Promise<Rs | null>((resolve, reject) => {
     fetch(...args).then(response => {
@@ -20,10 +20,7 @@ export function fetcher<Rs> (...args: fetcherArgs) {
     }).then(jsonData => {
       resolve(jsonData)
     }).catch(error => {
-      const errorMessage = resolveErrorMessage(error)
-      reject(errorMessage)
+      reject(error)
     })
   })
 }
-
-export default fetcher
