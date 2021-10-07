@@ -7,7 +7,7 @@ import {
 } from '@components'
 
 import { fetcher, resolveErrorMessage } from '@lib'
-import EncryptForm from 'src/page-components/Index/EncryptForm'
+import HashForm from 'src/page-components/Index/HashForm'
 import CompareForm from 'src/page-components/Index/CompareForm'
 
 interface GeneralResponse {
@@ -15,15 +15,15 @@ interface GeneralResponse {
 }
 
 const Index: NextPage = () => {
-  const [_encryptedText, _setEncryptedText] = useState<string>('')
-  const [_encryptLoading, _setEncryptLoading] = useState<boolean>(false)
-  const [_encryptError, _setEncryptError] = useState<string | null>(null)
+  const [_hashedText, _setHashedText] = useState<string>('')
+  const [_hashLoading, _setHashLoading] = useState<boolean>(false)
+  const [_hashError, _setHashError] = useState<string | null>(null)
 
   const [_compareLoading, _setCompareLoading] = useState<boolean>(false)
   const [_compareError, _setCompareError] = useState<string | null>(null)
   const [_compareSuccess, _setCompareSuccess] = useState<boolean>(false)
 
-  const { control: encryptControl, handleSubmit: encryptHandleSubmit } = useForm<{
+  const { control: hashControl, handleSubmit: hashHandleSubmit } = useForm<{
     data: string
     saltRound: string
   }>()
@@ -33,11 +33,11 @@ const Index: NextPage = () => {
     hash: string
   }>()
 
-  const postEncryptData = async (bodyData: any) => {
-    _setEncryptLoading(true)
-    _setEncryptedText('')
+  const postHashData = async (bodyData: any) => {
+    _setHashLoading(true)
+    _setHashedText('')
     try {
-      const response = await fetcher<GeneralResponse>('/api/bcrypt-encrypt', {
+      const response = await fetcher<GeneralResponse>('/api/bcrypt-hash', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -45,18 +45,18 @@ const Index: NextPage = () => {
         body: JSON.stringify(bodyData)
       })
       if (response?.data) {
-        _setEncryptedText(response.data)
-        _setEncryptError(null)
+        _setHashedText(response.data)
+        _setHashError(null)
       }
     } catch (error) {
-      _setEncryptError(resolveErrorMessage(error))
+      _setHashError(resolveErrorMessage(error))
     } finally {
-      _setEncryptLoading(false)
+      _setHashLoading(false)
     }
   }
 
-  const onEncryptSubmit = encryptHandleSubmit((data) => {
-    postEncryptData(data)
+  const onHashSubmit = hashHandleSubmit((data) => {
+    postHashData(data)
   })
 
   const postCompareData = async (bodyData: any) => {
@@ -95,14 +95,14 @@ const Index: NextPage = () => {
     <HomeTemplate>
       <section className='max-w-xl mx-auto p-6 rounded-md shadow-md my-4'>
 
-        <h2 className='text-lg font-semibold capitalize'>encrypt</h2>
+        <h2 className='text-lg font-semibold capitalize'>hash</h2>
 
-        <EncryptForm
-          loading={_encryptLoading}
-          error={_encryptError}
-          control={encryptControl}
-          encryptedTextValue={_encryptedText}
-          onSubmit={onEncryptSubmit}
+        <HashForm
+          loading={_hashLoading}
+          error={_hashError}
+          control={hashControl}
+          hashTextValue={_hashedText}
+          onSubmit={onHashSubmit}
         />
       </section>
       
