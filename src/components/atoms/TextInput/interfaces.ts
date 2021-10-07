@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from 'react';
+import { InputHTMLAttributes } from 'react'
 
 export type TextInputVariant = 'outlined'
 
@@ -12,10 +12,10 @@ export interface ITextInputProps extends InputHTMLAttributes<{}> {
   label?: string
   fullWidth?: boolean
   containerProps?: IContainerTextInputProps
+  error?: boolean
+  errorMessage?: string
   // eslint-disable-next-line no-unused-vars
   onChangeText?: (value: string) => void
 }
 
-export interface IRefTextInput {
-  current: HTMLInputElement | null
-}
+export type IRefTextInput = HTMLInputElement

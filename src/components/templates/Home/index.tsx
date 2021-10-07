@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { classNames } from '../../../lib/utils/style';
-import Navbar from '../../organisms/Navbar';
-import { IHomeProps } from './interfaces';
+import { classNames } from '../../../lib/utils/style'
+import Navbar from '../../organisms/Navbar'
+import { IHomeProps } from './interfaces'
 
 export default function HomeTemplate({ title = 'NextJS Bcrypt Generator', description = 'Simple NextJS Bcrypt Generator', children, className = '' }: IHomeProps) {
   return (
@@ -14,9 +14,9 @@ export default function HomeTemplate({ title = 'NextJS Bcrypt Generator', descri
       <header>
         <Navbar />
       </header>
-      <main className={classNames("w-full", className)}>
+      <main className={classNames("block", className)}>
         {children}
       </main>
     </>
-  );
+  )
 }

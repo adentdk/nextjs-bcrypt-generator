@@ -17,21 +17,16 @@
     "paths": {
       "@api-lib": ["src/api-lib"],
       "@api-lib/*": ["src/api-lib/*"],
-      "@api-lib/**": ["src/api-lib/**"],
       "@components": ["src/components"],
       "@components/*": ["src/components/*"],
-      "@components/**": ["src/components/**"],
       "@Interfaces": ["src/Interfaces"],
       "@Interfaces/*": ["src/Interfaces/*"],
-      "@Interfaces/**": ["src/Interfaces/**"],
       "@lib": ["src/lib"],
       "@lib/*": ["src/lib/*"],
-      "@lib/**": ["src/lib/**"],
       "@page-components": ["src/page-components"],
-      "@page-components/*": ["src/page-components/*"],
-      "@page-components/**": ["src/page-components/**"],
+      "@page-components/*": ["src/page-components/*"]
     }
-  },
+  }, 
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", ".next", ".storybook"]
 }

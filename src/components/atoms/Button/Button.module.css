@@ -29,7 +29,7 @@
   @apply text-white bg-info-400 hover:bg-info-500 focus:ring-info-100
 }
 .button-contained-disabled {
-  @apply text-white bg-gray-400 hover:bg-gray-500 cursor-not-allowed
+  @apply text-white bg-gray-400 cursor-not-allowed 
 }
 
 /* outlined-button */
@@ -55,12 +55,12 @@
   @apply text-info-600 hover:text-info-700 border-info-400 hover:border-info-500 focus:ring-info-100
 }
 .button-outlined-disabled {
-  @apply text-gray-400 border-gray-400 hover:border-gray-500 hover:text-gray-500 cursor-not-allowed
+  @apply text-gray-400 border-gray-400 hover:text-gray-500 cursor-not-allowed
 }
 
 /* text button */
 .button-text {
-  @apply border border-transparent hover:bg-gray-50
+  @apply border border-transparent focus:bg-transparent
 }
 .button-text-primary {
   @apply text-primary-600 hover:text-primary-700
@@ -81,5 +81,5 @@
   @apply text-secondary-600 hover:text-secondary-700
 }
 .button-text-disabled {
-  @apply text-gray-400 hover:text-gray-300 hover:bg-gray-50 cursor-not-allowed
+  @apply text-gray-400 hover:text-gray-300 cursor-not-allowed
 }

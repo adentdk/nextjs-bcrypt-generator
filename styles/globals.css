@@ -2,15 +2,15 @@
 @tailwind components;
 
 html, body {
-  @apply min-h-screen
+  @apply min-h-screen;
 }
 
 body {
-  @apply bg-white dark:bg-gray-800 text-gray-700 dark:text-white
+  @apply bg-white dark:bg-gray-800 text-gray-700 dark:text-white;
 }
 
 .border-inset {
-  border-style: 'dotted'
+  border-style: 'dotted';
 }
 
 @tailwind utilities;

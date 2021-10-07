@@ -8,13 +8,20 @@ interface ResponseData {
 }
 
 const postHandler = (req: NextApiRequest, res: NextApiResponse) => {
-  const {data, saltRound} = req.body
+  const {data, hash} = req.body
 
-  const salt = bcrypt.genSaltSync(Number(saltRound))
+  const isValid = bcrypt.compareSync(data, hash)
 
-  const encryptedData = bcrypt.hashSync(data, salt)
+  if (isValid) {
+    response.ok(res, ['data', isValid])
+  } else {
+    response.badRequest(res, [
+      {
+        message: 'not valid'
+      }
+    ])
+  }
 
-  response.ok(res, ['data', encryptedData])
 }
 
 export default function handler(

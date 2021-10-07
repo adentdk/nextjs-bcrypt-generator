@@ -20,8 +20,7 @@ export function fetcher<Rs> (...args: fetcherArgs) {
     }).then(jsonData => {
       resolve(jsonData)
     }).catch(error => {
-      const errorMessage = resolveErrorMessage(error);
-      console.log(errorMessage)
+      const errorMessage = resolveErrorMessage(error)
       reject(errorMessage)
     })
   })

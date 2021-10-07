@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
-import { ITextInputProps } from '../../atoms/TextInput/interfaces';
+import { ReactNode } from 'react'
+import { ITextInputProps } from '../../atoms/TextInput/interfaces'
 
 export interface ITextInputWithIconProps extends ITextInputProps {
   icon: ReactNode
   iconClassName?: string
 }
 
-export const xyz = '';
+export const xyz = ''
