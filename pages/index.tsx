@@ -7,8 +7,8 @@ import {
 } from '@components'
 
 import { fetcher, resolveErrorMessage } from '@lib'
-import HashForm from 'src/page-components/Index/HashForm'
-import CompareForm from 'src/page-components/Index/CompareForm'
+import HashForm from '../src/page-components/Index/HashForm'
+import CompareForm from '../src/page-components/Index/CompareForm'
 
 interface GeneralResponse {
   data: string

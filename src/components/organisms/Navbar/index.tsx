@@ -1,4 +1,4 @@
-import { useTheme } from 'src/contexts/theme'
+import { useTheme } from '../../../contexts/theme'
 import Button from '../../atoms/Button'
 
 export default function Navbar() {

@@ -1,7 +1,7 @@
 import { Alert, Button, TextInput } from "@components";
-import { IRefTextInput, ITextInputProps } from "src/components/atoms/TextInput/interfaces";
-import withControlledTextInput from "src/Hocs/withFormController";
 import { useState, useEffect } from "react";
+import { IRefTextInput, ITextInputProps } from "../../components/atoms/TextInput/interfaces";
+import withControlledTextInput from "../../Hocs/withFormController";
 
 interface ICompareFormProps {
   onSubmit: () => void
