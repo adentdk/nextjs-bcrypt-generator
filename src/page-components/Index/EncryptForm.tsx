@@ -55,7 +55,6 @@ export default function EncryptForm({ onSubmit, error, control, encryptedTextVal
 
   useEffect(() => {
     if (_copied) {
-      console.log('halo')
       setTimeout(() => {
         _setCopied(false)
       }, 2000)
